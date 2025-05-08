@@ -124,7 +124,47 @@ console.log("A", a) //?
 console.log("B", b)// ?
 
 
+//! ----------- Arrow Function
+//? ES5
+function example(a, b) {
+    return a + b
+}
 
+console.log(example(5, 2))
+
+//? ES6 Fun
+const exampleES6 = function () {
+    return a + b
+}
+//? ES6 Arrow Fun
+//!Name of the fun:example---Declaration of a function
+//        -//-               -//-
+const anotherExampleEs6 = (a, b) => {
+    return a + b
+}
+//? anonyms
+() => "Hello"
+
+const anotherExampleEs6OneLine = (a, b) => a + b
+const anotherExampleEs6OneLine2 = () => "hello"
+
+
+
+
+//! ----------- (ternary) operator
+//? ES5
+const num = 15
+
+if (num > 10) {
+    console.log("Hello")
+    // True
+} else {
+    console.log("hey")
+    // False
+}
+//? ES6
+num > 10 ? console.log("Hello") : console.log("Hey")
+//---------------True----------------false
 
 
 
