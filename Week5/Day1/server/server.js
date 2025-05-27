@@ -41,6 +41,36 @@ app.post("/api/users", (req, res) => {
 })
 
 
+//! READ ONE
+
+app.get("/api/users/:id", (req, res) => {
+    res.json(users[req.params.id])
+})
+
+
+//! Update
+
+app.put("/api/users/:id", (req, res) => {
+    users.forEach((user, idx) => {
+        if (user.id == req.params.id) {
+            user = { ...user, ...req.body }
+            users[idx] = user
+        }
+    })
+    const updatedUser = users.find(user => user.id == req.params.id)
+    res.json(updatedUser)
+
+})
+
+//! Delete
+
+app.delete("/api/users/:id", (req, res) => {
+    const index = users.findIndex(user => user.id == req.params.id)
+    users.splice(index, 1)
+    res.json(users)
+})
+
+
 
 
 app.listen(PORT, () => console.log(`Server is running now the PORT : ${PORT}`))
