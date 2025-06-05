@@ -1,9 +1,15 @@
 import express from "express"
 import dbConnect from "./config/mongo.config.js"
+import routes from "./routes/cake.routes.js"
+import dotenv from "dotenv"
+
+dotenv.config()
 
 
 const app = express()
-const PORT = 5000
+const PORT = process.env.PORT
+app.use(express.json())
+app.use("/api", routes)
 
 
 dbConnect()

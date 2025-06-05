@@ -1,7 +1,10 @@
 import { connect } from "mongoose";
+import dotenv from "dotenv"
 
-const MONGO_URI = "mongodb+srv://root:root@cluster-mern.nqovtuy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-MERN"
-const dbName = "CakeDB"
+dotenv.config()
+
+const MONGO_URI = process.env.MONGO_URI
+const dbName = process.env.dbName
 
 
 async function dbConnect() {
